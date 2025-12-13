@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>No Kill Fishing - Home</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4cae4f",
+                        "secondary": "#2196F3",
+                        "background-light": "#f6f7f6",
+                        "background-dark": "#151d15",
+                        "accent-gray": "#F5F5F5",
+                        "text-main": "#131613",
+                        "text-sub": "#6c7f6d",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-main antialiased selection:bg-primary/30 selection:text-primary">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 flex items-center justify-between border-b border-solid border-gray-200 bg-white/90 backdrop-blur-md px-6 py-4 dark:border-gray-800 dark:bg-background-dark/90 lg:px-20">
+<div class="flex items-center gap-4 text-text-main dark:text-white">
+<div class="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-2xl">phishing</span>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-tight">No Kill Fishing</h2>
+</div>
+<div class="hidden flex-1 justify-end gap-8 lg:flex">
+<div class="flex items-center gap-8">
+<a class="text-sm font-medium transition-colors hover:text-primary dark:text-gray-300 dark:hover:text-primary" href="#">Home</a>
+<a class="text-sm font-medium transition-colors hover:text-primary dark:text-gray-300 dark:hover:text-primary" href="#">Species</a>
+<a class="text-sm font-medium transition-colors hover:text-primary dark:text-gray-300 dark:hover:text-primary" href="#">Blog</a>
+<a class="text-sm font-medium transition-colors hover:text-primary dark:text-gray-300 dark:hover:text-primary" href="#">Community</a>
+</div>
+<div class="flex gap-3">
+<button class="flex h-10 min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-gray-100 px-4 text-sm font-bold tracking-wide text-text-main transition-all hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700">
+<span class="truncate">Log In</span>
+</button>
+<button class="flex h-10 min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-primary px-4 text-sm font-bold tracking-wide text-white transition-all hover:bg-green-600 shadow-md shadow-green-600/20">
+<span class="truncate">Sign Up</span>
+</button>
+</div>
+</div>
+<!-- Mobile Menu Icon -->
+<button class="flex items-center justify-center lg:hidden text-text-main dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- Hero Section -->
+<div class="relative flex min-h-[600px] w-full flex-col items-center justify-center bg-cover bg-center bg-no-repeat p-6 text-center lg:min-h-[700px]" data-alt="peaceful angler releasing a fish into a river at sunset" style='background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDG6ta3ZHH4TSbGpMq98Un_cSxhWz1kpXLEvhXsMEcWLFTt0l-vdx6fEtoDKN-IMI6Aw-4SUnwR0WFd8kyVqKJvlVlSnbC10nrvsy_XJrCHxr9b4SsBKlZzbvrV6pqy7x-3JO8Rtf5ktbnr68KiEJtzXVlr8woIau2VX666dL4VnxpPa1ZGvExv1bsEyihrxyrnd1eUBocYBsM4ANO1Pdoi6aLXREfAGXYQqCrZ9qH_NZ6kPUo_Ruaz2EIFSFoEs29dpKCzruAh8xQ");'>
+<div class="flex max-w-[800px] flex-col gap-6 animate-fade-in-up">
+<h1 class="text-4xl font-black leading-tight tracking-tight text-white drop-shadow-sm md:text-6xl lg:text-7xl">
+                    Preserve the Thrill.<br/><span class="text-primary">Protect the Waters.</span>
+</h1>
+<h2 class="mx-auto max-w-[600px] text-base font-medium leading-relaxed text-gray-100 md:text-lg">
+                    Join the premier community dedicated to sustainable catch-and-release fishing. Learn, share, and conserve for future generations.
+                </h2>
+<div class="mt-4 flex flex-col items-center justify-center gap-4 sm:flex-row">
+<button class="flex h-12 w-full min-w-[160px] cursor-pointer items-center justify-center gap-2 rounded-lg bg-primary px-6 text-base font-bold text-white transition-transform hover:scale-105 hover:bg-green-600 sm:w-auto shadow-lg shadow-green-500/30">
+<span>Join the Movement</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<button class="flex h-12 w-full min-w-[160px] cursor-pointer items-center justify-center gap-2 rounded-lg bg-white/10 px-6 text-base font-bold text-white backdrop-blur-sm transition-colors hover:bg-white/20 sm:w-auto border border-white/20">
+<span class="material-symbols-outlined text-[20px]">play_circle</span>
+<span>Watch Video</span>
+</button>
+</div>
+</div>
+<!-- Floating info card -->
+<div class="absolute bottom-10 right-10 hidden max-w-xs rounded-xl bg-white/90 p-4 shadow-xl backdrop-blur-md dark:bg-gray-900/90 lg:block">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary">water_drop</span>
+<div>
+<p class="text-sm font-bold text-text-main dark:text-white">River Health Index</p>
+<p class="text-xs text-text-sub dark:text-gray-400">Excellent conditions today for trout fishing.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Community Highlights Carousel -->
+<section class="w-full bg-white py-16 px-4 dark:bg-background-dark lg:px-20">
+<div class="mx-auto max-w-7xl">
+<div class="mb-8 flex items-end justify-between">
+<div>
+<h2 class="text-3xl font-bold tracking-tight text-text-main dark:text-white">Community Highlights</h2>
+<p class="mt-2 text-text-sub dark:text-gray-400">Upcoming events and recent stories from our members.</p>
+</div>
+<div class="hidden gap-2 md:flex">
+<button class="flex size-10 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-600 transition-colors hover:border-primary hover:text-primary dark:border-gray-700 dark:bg-transparent dark:text-gray-400 dark:hover:text-primary">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="flex size-10 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-600 transition-colors hover:border-primary hover:text-primary dark:border-gray-700 dark:bg-transparent dark:text-gray-400 dark:hover:text-primary">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex gap-6 overflow-x-auto pb-6 [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
+<!-- Card 1 -->
+<div class="group flex min-w-[280px] flex-1 flex-col overflow-hidden rounded-xl bg-background-light transition-all hover:-translate-y-1 hover:shadow-lg dark:bg-gray-800 md:min-w-[320px]">
+<div class="relative aspect-video w-full overflow-hidden">
+<div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="group of volunteers cleaning up a river bank" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDOSj7g9T2lbPCLWWskFkSSnHc6RC1d5rT7s_MkGDk6XIr_d11WYn_VizTtwk02TSsot7rsa8Rt9VORQTi5yau5xfRKVDFX4_VT8TEIXHEL5W8xNu-XfdDU2bSJEeQKgzwPdtE0eXWXfF5op8wwTSS1ETwkLvS8-nYPjDGaFCLwjIZvxPER8y4KnMTnoOS-bXNdJcGKEsph5OlSNzxBCqVFRzkdykdu8kAktqeNzckTNe_aLigyarhMoV8kLoK93mkJXvRAXEOUF9E");'></div>
+<div class="absolute top-3 left-3 rounded-md bg-white/90 px-2 py-1 text-xs font-bold text-text-main shadow-sm backdrop-blur-sm">Event</div>
+</div>
+<div class="flex flex-1 flex-col p-5">
+<div class="mb-3 flex items-center gap-2 text-xs font-medium text-secondary">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span>Oct 24, 2023</span>
+</div>
+<h3 class="mb-2 text-lg font-bold text-text-main dark:text-white">River Cleanup 2024</h3>
+<p class="mb-4 text-sm leading-relaxed text-text-sub dark:text-gray-400">Join over 200 volunteers to clean the banks of the Silver Creek. Gear provided.</p>
+<a class="mt-auto inline-flex items-center gap-1 text-sm font-bold text-primary hover:underline" href="#">
+                                Register Now <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group flex min-w-[280px] flex-1 flex-col overflow-hidden rounded-xl bg-background-light transition-all hover:-translate-y-1 hover:shadow-lg dark:bg-gray-800 md:min-w-[320px]">
+<div class="relative aspect-video w-full overflow-hidden">
+<div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="close up of a colorful trout being released into water" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBjgY_1OaB-R9Ou6Mz9ry0f3URMGOgPf1RePeTHwLmO9NXY4KWz8GDMfbgjszA1s5_dyYK2e49LVZ6fdKHTNxSMGz5k1qMKK1sm2SmF4nhA3kuuWMrrKB7FpuXUgW36R8BBpB-znywsa7-sfgqo57qjtiqYjEu7_8-uvKCWskIr2E_fGjJdeZU3DcM4wmH-FijseCWmOWhv7sxiJ1JaBEcsR1fSGVXcha-OzXk2UDjFAF2YzdWY2e1VmnrHCdwXpi1C85eYeYMYdLM");'></div>
+<div class="absolute top-3 left-3 rounded-md bg-white/90 px-2 py-1 text-xs font-bold text-text-main shadow-sm backdrop-blur-sm">Story</div>
+</div>
+<div class="flex flex-1 flex-col p-5">
+<div class="mb-3 flex items-center gap-2 text-xs font-medium text-secondary">
+<span class="material-symbols-outlined text-[16px]">person</span>
+<span>Mike D.</span>
+</div>
+<h3 class="mb-2 text-lg font-bold text-text-main dark:text-white">Annual Trout Derby</h3>
+<p class="mb-4 text-sm leading-relaxed text-text-sub dark:text-gray-400">A recap of this year's catch-and-release tournament. Biggest catch released: 24 inches.</p>
+<a class="mt-auto inline-flex items-center gap-1 text-sm font-bold text-primary hover:underline" href="#">
+                                Read Story <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group flex min-w-[280px] flex-1 flex-col overflow-hidden rounded-xl bg-background-light transition-all hover:-translate-y-1 hover:shadow-lg dark:bg-gray-800 md:min-w-[320px]">
+<div class="relative aspect-video w-full overflow-hidden">
+<div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="fishing lure box open with various colorful lures" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCscy3-n4KyTnAV3VdEsk8Ymd_KIQehLuSOuQZQ1XVxBLjQDQPPxU9K5kbpO2ocK3tqSbjmE5rJ4x3InkdaFPKnhilXm2VjS93Cxpx5_Rh4G86xo6fgOOiTWSAAm9RvxlMKoh-4VA3AKYeE-gydYh0lOdI9zGMD0GMwu9KYn5n0PcS7zfxKVJr6I3OMfTRNAsNyOZuanbAf7TVfV0enjb2ybeBvR8PBiyzr8mlc-zUknM8AC6i55ijgYQiuyL-AsV5wcnuefMHMD78");'></div>
+<div class="absolute top-3 left-3 rounded-md bg-white/90 px-2 py-1 text-xs font-bold text-text-main shadow-sm backdrop-blur-sm">Workshop</div>
+</div>
+<div class="flex flex-1 flex-col p-5">
+<div class="mb-3 flex items-center gap-2 text-xs font-medium text-secondary">
+<span class="material-symbols-outlined text-[16px]">school</span>
+<span>Pro Guide</span>
+</div>
+<h3 class="mb-2 text-lg font-bold text-text-main dark:text-white">Bass Workshop</h3>
+<p class="mb-4 text-sm leading-relaxed text-text-sub dark:text-gray-400">Learn from the pros about safe handling techniques for large mouth bass.</p>
+<a class="mt-auto inline-flex items-center gap-1 text-sm font-bold text-primary hover:underline" href="#">
+                                Learn More <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Species Section (Grid) -->
+<section class="w-full bg-accent-gray py-16 px-4 dark:bg-gray-900 lg:px-20">
+<div class="mx-auto max-w-7xl">
+<div class="mb-10 text-center">
+<span class="mb-2 inline-block rounded-full bg-secondary/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-secondary">Education</span>
+<h2 class="text-3xl font-bold text-text-main dark:text-white md:text-4xl">Know Your Catch</h2>
+<p class="mx-auto mt-4 max-w-2xl text-text-sub dark:text-gray-400">Identify species and learn specific handling guidelines to ensure their survival after release.</p>
+</div>
+<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+<!-- Species Card 1 -->
+<div class="group relative overflow-hidden rounded-xl bg-white shadow-sm transition-shadow hover:shadow-md dark:bg-gray-800">
+<div class="aspect-[4/3] w-full bg-gray-200 bg-cover bg-center" data-alt="illustration or photo of a Rainbow Trout swimming underwater" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCGQGkeVTB2OgCNNb7_Us2mPT5iZRsJA26Q2GaAWWhg79eB1hJa_iaanovzLFtM_Z6uVs44sO7p9k1ewiUoa1GOtW8KqvUGIKjFymxuzsSSrbtlrXUyS6g8k5jyrWHyb1eNxlxnw1-cAPq2v6S2x-3y9IFv3eYgerJTMEY6AglOLRcu60A4_85nLmB_8thJi5AAIPVqPK00-SC6dopL-63m23_OBckSoyyhSzkbqmylM0Pj5_6tDo9OTrNqS5nvNOHq487CZMe2-iw");'></div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-text-main dark:text-white">Rainbow Trout</h3>
+<p class="mt-2 line-clamp-2 text-sm text-text-sub dark:text-gray-400">Native to cold-water tributaries of the Pacific Ocean in Asia and North America.</p>
+<button class="mt-4 flex w-full items-center justify-center rounded-lg border border-primary/20 bg-primary/5 py-2.5 text-sm font-bold text-primary transition-colors group-hover:bg-primary group-hover:text-white dark:border-primary/40 dark:bg-primary/10">
+                                View Species
+                            </button>
+</div>
+</div>
+<!-- Species Card 2 -->
+<div class="group relative overflow-hidden rounded-xl bg-white shadow-sm transition-shadow hover:shadow-md dark:bg-gray-800">
+<div class="aspect-[4/3] w-full bg-gray-200 bg-cover bg-center" data-alt="Large Mouth Bass jumping out of water" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC8W_r4LgQhjS-JqR3fyWDewRy5bGtIVc2B1DiKzU0mGC0vbwfECKJHsa3g_1bSeKVjCJShdXKQocdP4NEtpuESVRfXpe3phtg-6drbeUCIhSKkTYSFIwrUI6eJ9THq7MUuK5F8_eOj6VOEwE42zwiZsGDyjVro38J_oUlsikt7zeL4X7jjkU9YPk4LtAplGXU8_PoipoFH9iIjAWSOIWmbWjXSVzt-fjknkgITpDsjrAEjKy4cLBRm8xr2lEhzxdHRkGaX8sFflZI");'></div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-text-main dark:text-white">Largemouth Bass</h3>
+<p class="mt-2 line-clamp-2 text-sm text-text-sub dark:text-gray-400">A carnivorous freshwater gamefish in the Centrarchidae (sunfish) family.</p>
+<button class="mt-4 flex w-full items-center justify-center rounded-lg border border-primary/20 bg-primary/5 py-2.5 text-sm font-bold text-primary transition-colors group-hover:bg-primary group-hover:text-white dark:border-primary/40 dark:bg-primary/10">
+                                View Species
+                            </button>
+</div>
+</div>
+<!-- Species Card 3 -->
+<div class="group relative overflow-hidden rounded-xl bg-white shadow-sm transition-shadow hover:shadow-md dark:bg-gray-800">
+<div class="aspect-[4/3] w-full bg-gray-200 bg-cover bg-center" data-alt="Northern Pike underwater shot" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuByfXlxGKLgIHhgy1j0A7HQGwzJCb7BPBlCA1Jt7dKhxBlsHwvgoEhoVdeRByfAqaCTtC23iW7-KvN0cdxiTyplYmHZE9YmbfnMkF_c4LVs856dW9PxAe-Z8pdwvmhAiE9ro1OwsWGV-qElzUIqpVSOkRCKOdMlAKrQhldTyFZZcOKO-MYBBiQQyqtfWjETg8oLk0I8A7I2m9Y1XbmBYcmnve3Lw1ver5HS_qVFscIqFswguiHF5PINN8N12V5lfPzxKQhlh0nohAk");'></div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-text-main dark:text-white">Northern Pike</h3>
+<p class="mt-2 line-clamp-2 text-sm text-text-sub dark:text-gray-400">Known for their aggressive behavior and prominent sharp teeth.</p>
+<button class="mt-4 flex w-full items-center justify-center rounded-lg border border-primary/20 bg-primary/5 py-2.5 text-sm font-bold text-primary transition-colors group-hover:bg-primary group-hover:text-white dark:border-primary/40 dark:bg-primary/10">
+                                View Species
+                            </button>
+</div>
+</div>
+</div>
+<div class="mt-10 flex justify-center">
+<button class="group flex items-center gap-2 text-sm font-bold text-text-main transition-colors hover:text-primary dark:text-white dark:hover:text-primary">
+<span>View All Species</span>
+<span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_right_alt</span>
+</button>
+</div>
+</div>
+</section>
+<!-- CTA / Value Proposition -->
+<section class="relative flex w-full flex-col items-center justify-between gap-10 overflow-hidden bg-primary px-6 py-20 text-white dark:bg-green-700 lg:flex-row lg:px-20">
+<!-- Background Pattern (Abstract) -->
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 20px 20px;"></div>
+<div class="relative z-10 max-w-2xl">
+<h2 class="text-3xl font-black leading-tight tracking-tight md:text-5xl">Fishing for the Future.</h2>
+<p class="mt-6 text-lg font-medium text-white/90">Our blog features expert advice, conservation news, and stories from anglers who care. Stay informed and improve your technique.</p>
+<div class="mt-8 flex flex-wrap gap-4">
+<div class="flex items-center gap-2 rounded-full bg-white/20 px-4 py-2 backdrop-blur-sm">
+<span class="material-symbols-outlined text-sm">eco</span>
+<span class="text-sm font-bold">Eco-Friendly Gear</span>
+</div>
+<div class="flex items-center gap-2 rounded-full bg-white/20 px-4 py-2 backdrop-blur-sm">
+<span class="material-symbols-outlined text-sm">water_lux</span>
+<span class="text-sm font-bold">Water Conservation</span>
+</div>
+<div class="flex items-center gap-2 rounded-full bg-white/20 px-4 py-2 backdrop-blur-sm">
+<span class="material-symbols-outlined text-sm">diversity_3</span>
+<span class="text-sm font-bold">Community Events</span>
+</div>
+</div>
+<button class="mt-10 flex h-12 cursor-pointer items-center justify-center gap-2 rounded-lg bg-white px-8 text-base font-bold text-primary shadow-lg transition-transform hover:-translate-y-1 hover:shadow-xl">
+<span class="material-symbols-outlined">menu_book</span>
+<span>Read the Blog</span>
+</button>
+</div>
+<div class="relative z-10 hidden lg:block">
+<!-- Illustration/Icon placeholder -->
+<div class="flex size-64 items-center justify-center rounded-full bg-white/10 backdrop-blur-md">
+<span class="material-symbols-outlined text-[120px] text-white">sailing</span>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-background-light py-12 px-6 dark:bg-background-dark dark:text-white lg:px-20">
+<div class="mx-auto max-w-7xl">
+<div class="grid gap-10 md:grid-cols-4">
+<div class="col-span-1 md:col-span-2">
+<div class="mb-4 flex items-center gap-2 text-text-main dark:text-white">
+<span class="material-symbols-outlined text-primary text-3xl">phishing</span>
+<span class="text-xl font-bold">No Kill Fishing</span>
+</div>
+<p class="mb-6 max-w-sm text-sm text-text-sub dark:text-gray-400">
+                            Dedicated to the sport of fishing and the preservation of our waterways. We believe in sustainable practices for future generations.
+                        </p>
+<div class="flex gap-4">
+<a class="flex size-8 items-center justify-center rounded-full bg-gray-200 text-gray-600 transition-colors hover:bg-primary hover:text-white dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-primary dark:hover:text-white" href="#">
+<!-- Social Icon Placeholder (Facebook) -->
+<svg class="size-4" fill="currentColor" viewbox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.791-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+</a>
+<a class="flex size-8 items-center justify-center rounded-full bg-gray-200 text-gray-600 transition-colors hover:bg-primary hover:text-white dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-primary dark:hover:text-white" href="#">
+<!-- Social Icon Placeholder (Twitter) -->
+<svg class="size-4" fill="currentColor" viewbox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path></svg>
+</a>
+<a class="flex size-8 items-center justify-center rounded-full bg-gray-200 text-gray-600 transition-colors hover:bg-primary hover:text-white dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-primary dark:hover:text-white" href="#">
+<!-- Social Icon Placeholder (Instagram) -->
+<svg class="size-4" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+</div>
+</div>
+<div class="col-span-1">
+<h4 class="mb-4 text-sm font-bold uppercase tracking-wider text-text-main dark:text-white">Explore</h4>
+<ul class="flex flex-col gap-3 text-sm text-text-sub dark:text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="#">Find a Spot</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Species Guide</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Conservation Blog</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Community Forum</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="mb-4 text-sm font-bold uppercase tracking-wider text-text-main dark:text-white">Stay Updated</h4>
+<div class="flex flex-col gap-3">
+<input class="w-full rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary dark:border-gray-700 dark:bg-gray-800 dark:text-white" placeholder="Enter your email" type="email"/>
+<button class="w-full rounded-lg bg-primary px-4 py-2.5 text-sm font-bold text-white transition-colors hover:bg-green-600">
+                                Subscribe
+                            </button>
+</div>
+</div>
+</div>
+<div class="mt-12 border-t border-gray-200 pt-8 text-center text-xs text-text-sub dark:border-gray-700 dark:text-gray-500">
+<p>© 2024 No Kill Fishing. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

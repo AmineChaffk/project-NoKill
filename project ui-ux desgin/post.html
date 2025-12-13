@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EcoCatch - Species &amp; Fishing Zones</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Noto+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4cae4f",
+                        "background-light": "#f6f7f6",
+                        "background-dark": "#151d15",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom Scrollbar for the list view */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #d1d5db;
+            border-radius: 20px;
+        }
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #374151;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-50 font-display overflow-hidden h-screen flex flex-col">
+<!-- Top Navigation -->
+<header class="flex-none flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-[#1a231a] px-6 py-3 z-30 shadow-sm">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-primary">
+<div class="size-8 flex items-center justify-center rounded-full bg-primary/10">
+<span class="material-symbols-outlined text-2xl">phishing</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold tracking-tight">EcoCatch</h2>
+</div>
+<!-- Desktop Nav Links -->
+<nav class="hidden lg:flex items-center gap-6 ml-4">
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Species</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Zones</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Community</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Learn</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<!-- Search for Mobile/Tablet hidden on larger screens where sidebar search takes over or acts as global search -->
+<label class="hidden md:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full relative">
+<div class="text-slate-500 absolute left-3 top-2.5 z-10">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-full text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:border-primary h-full placeholder:text-slate-400 px-4 pl-10 text-sm font-normal leading-normal transition-all" placeholder="Global Search..." value=""/>
+</div>
+</label>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-lg h-9 px-4 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-bold transition-colors">
+                    Log In
+                </button>
+<button class="flex items-center justify-center rounded-lg h-9 px-4 bg-primary hover:bg-green-600 text-white shadow-md shadow-green-500/20 text-sm font-bold transition-colors">
+                    Sign Up
+                </button>
+</div>
+</div>
+</header>
+<!-- Main Content Area: Split View -->
+<main class="flex flex-1 overflow-hidden relative w-full h-full">
+<!-- Left Sidebar: Filters & List -->
+<aside class="w-full lg:w-[450px] xl:w-[500px] flex flex-col bg-white dark:bg-[#1a231a] border-r border-slate-200 dark:border-slate-800 z-20 shadow-xl lg:shadow-none h-full relative">
+<!-- Sidebar Header & Filters -->
+<div class="p-6 pb-2 flex-none border-b border-slate-100 dark:border-slate-800/50">
+<div class="mb-4">
+<h1 class="text-2xl font-bold text-slate-900 dark:text-white mb-1">Discover Species</h1>
+<p class="text-sm text-slate-500 dark:text-slate-400">Explore local sustainable catch-and-release zones.</p>
+</div>
+<!-- Search Input Local -->
+<div class="relative mb-4">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-2.5 border border-slate-200 dark:border-slate-700 rounded-lg leading-5 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary sm:text-sm" placeholder="Filter by species, lake, or region..." type="text"/>
+<div class="absolute inset-y-0 right-0 pr-2 flex items-center">
+<button class="p-1 rounded-md hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-400 transition-colors">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+</div>
+<!-- Chips Row -->
+<div class="flex gap-2 overflow-x-auto pb-4 custom-scrollbar items-center">
+<button class="flex shrink-0 items-center justify-center gap-x-1 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-3 py-1.5 text-xs font-semibold transition-transform active:scale-95">
+                        All Species
+                    </button>
+<button class="flex shrink-0 items-center justify-center gap-x-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 px-3 py-1.5 text-xs font-medium transition-colors border border-transparent hover:border-slate-300 dark:hover:border-slate-600">
+<span class="material-symbols-outlined text-[16px]">water_drop</span>
+                        Trout
+                    </button>
+<button class="flex shrink-0 items-center justify-center gap-x-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 px-3 py-1.5 text-xs font-medium transition-colors border border-transparent hover:border-slate-300 dark:hover:border-slate-600">
+<span class="material-symbols-outlined text-[16px]">set_meal</span>
+                        Bass
+                    </button>
+<button class="flex shrink-0 items-center justify-center gap-x-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 px-3 py-1.5 text-xs font-medium transition-colors border border-transparent hover:border-slate-300 dark:hover:border-slate-600">
+                        Native Only
+                    </button>
+<button class="flex shrink-0 items-center justify-center gap-x-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 px-3 py-1.5 text-xs font-medium transition-colors border border-transparent hover:border-slate-300 dark:hover:border-slate-600">
+                        Beginner Friendly
+                    </button>
+</div>
+</div>
+<!-- Scrollable List of Cards -->
+<div class="flex-1 overflow-y-auto custom-scrollbar p-6 pt-2 space-y-4 bg-slate-50 dark:bg-[#151c15]">
+<!-- Card 1 -->
+<div class="group relative flex flex-col sm:flex-row gap-4 bg-white dark:bg-[#1e281e] rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-md hover:border-primary/30 dark:hover:border-primary/30 transition-all cursor-pointer">
+<div class="w-full sm:w-28 h-32 sm:h-auto shrink-0 rounded-lg overflow-hidden relative">
+<img alt="Rainbow Trout swimming in clear water" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrcGRr2CzuJPKTHFwqYXzYnkJYefd9r0MpMNuKqsTixcjM_ybea6aTX-QOO57Zctv5gkrFd0IXNrEK2b92FXWIaIh4tLXkxRxXpg4BC0yJ-9Qzzs1ADjDfS_BRNE1vtctgvcsyWxrA4ffpj97tza_whmFTSjrzBRX5EQu-U_LCFO4r-Eh3wde2Ifvw99ELpotmFUy0fM0wtwVT9jqyjP0NzGpp_rWPM-UEQQ9t1cKMwrNLSIYw3vTnaG3C1tnaO723lxKr-seDBqw"/>
+<div class="absolute top-2 left-2 bg-green-100 text-green-800 text-[10px] font-bold px-2 py-0.5 rounded-full">Active</div>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-base font-bold text-slate-900 dark:text-white">Rainbow Trout</h3>
+<p class="text-xs italic text-slate-500 dark:text-slate-400 font-serif">Oncorhynchus mykiss</p>
+</div>
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">
+                                    Cool Water
+                                </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300">
+                                    Fly Fishing
+                                </span>
+</div>
+</div>
+<div class="mt-3 pt-3 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between">
+<div class="flex items-center text-xs text-slate-500 dark:text-slate-400 gap-1">
+<span class="material-symbols-outlined text-[14px]">public</span>
+<span>3 Zones nearby</span>
+</div>
+<span class="text-primary text-xs font-bold flex items-center gap-0.5 group-hover:translate-x-1 transition-transform">
+                                View Details <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative flex flex-col sm:flex-row gap-4 bg-white dark:bg-[#1e281e] rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-md hover:border-primary/30 dark:hover:border-primary/30 transition-all cursor-pointer">
+<div class="w-full sm:w-28 h-32 sm:h-auto shrink-0 rounded-lg overflow-hidden relative">
+<img alt="Largemouth Bass underwater close up" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3yExLavVatFaXrUyvOJakfh6CMzGAeXgW89LeVQjI5oWuAK4s13VENoE1McvdoE8YRk1VTTRN8PtSQ6UTNcgGor_fSmWmwmv_PDo7lZf4vcOfr6PJ7YMtK-RXNFGTWgoz0pXYPDYRLO7ArP1qOi2N7JRHcTMoR5qeBVRWb2qMPFhl8hT9koAZAH7lm3D332sYeW1oLgx56C-bx24ZFu3-C5ZR8zvdWVeFhxjJrd2KIXSQCiZgsdAu4NJKV4WFldFJOAr3L78ttEI"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-base font-bold text-slate-900 dark:text-white">Largemouth Bass</h3>
+<p class="text-xs italic text-slate-500 dark:text-slate-400 font-serif">Micropterus salmoides</p>
+</div>
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-orange-50 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300">
+                                    Warm Water
+                                </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300">
+                                    Beginner
+                                </span>
+</div>
+</div>
+<div class="mt-3 pt-3 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between">
+<div class="flex items-center text-xs text-slate-500 dark:text-slate-400 gap-1">
+<span class="material-symbols-outlined text-[14px]">public</span>
+<span>8 Zones nearby</span>
+</div>
+<span class="text-primary text-xs font-bold flex items-center gap-0.5 group-hover:translate-x-1 transition-transform">
+                                View Details <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative flex flex-col sm:flex-row gap-4 bg-white dark:bg-[#1e281e] rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-md hover:border-primary/30 dark:hover:border-primary/30 transition-all cursor-pointer">
+<div class="w-full sm:w-28 h-32 sm:h-auto shrink-0 rounded-lg overflow-hidden relative">
+<img alt="River perch details and scales" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5Bm4KY9Hnk-LY1HRCH3OhUiE1Zipzu5hEfEOFgMoCU5d4Hp-4IQTsC5LqllrZwVlZjwh0UIvgvMpC8gzM3lINdV15YDs0O3EZppT2iC4JXZtrWFAEYl3kv6_vM3TlXELhzgPXsihD7NETfuAhxMV_Tir3yXnvysvcILZ--UDXnn-JEXgCMWNRIBVKNCE9ebf29bLcS-L1e47hk9ATSz6CNOhSd2GKfVD3MFGrTOovvX_nv_8vTMGx_Lwbb06Dn4fponriYgI1soA"/>
+<div class="absolute top-2 left-2 bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-0.5 rounded-full">Catch &amp; Release</div>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-base font-bold text-slate-900 dark:text-white">European Perch</h3>
+<p class="text-xs italic text-slate-500 dark:text-slate-400 font-serif">Perca fluviatilis</p>
+</div>
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">
+                                    Freshwater
+                                </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300">
+                                    Spinning
+                                </span>
+</div>
+</div>
+<div class="mt-3 pt-3 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between">
+<div class="flex items-center text-xs text-slate-500 dark:text-slate-400 gap-1">
+<span class="material-symbols-outlined text-[14px]">public</span>
+<span>5 Zones nearby</span>
+</div>
+<span class="text-primary text-xs font-bold flex items-center gap-0.5 group-hover:translate-x-1 transition-transform">
+                                View Details <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Promo Card -->
+<div class="relative overflow-hidden rounded-xl p-6 bg-gradient-to-br from-primary to-green-700 text-white shadow-lg">
+<div class="relative z-10">
+<h3 class="font-bold text-lg mb-1">Eco-Tip of the Day</h3>
+<p class="text-sm text-green-50 mb-4">Always wet your hands before handling fish to protect their slime coat.</p>
+<button class="bg-white text-primary text-xs font-bold px-3 py-2 rounded-lg hover:bg-green-50 transition-colors">Learn More</button>
+</div>
+<span class="material-symbols-outlined absolute -bottom-4 -right-4 text-9xl text-white opacity-10 rotate-12 pointer-events-none">eco</span>
+</div>
+<!-- Card 4 -->
+<div class="group relative flex flex-col sm:flex-row gap-4 bg-white dark:bg-[#1e281e] rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-md hover:border-primary/30 dark:hover:border-primary/30 transition-all cursor-pointer">
+<div class="w-full sm:w-28 h-32 sm:h-auto shrink-0 rounded-lg overflow-hidden relative">
+<img alt="Northern Pike in dark water" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU9QZgpQ23GmW2xs9d0ZCRdyFx0PU4-h8NBNESvZpDhKhecCRkt3y2Om8DXHhZv_x0x39WgWhROW8Lm2-PJsHaX2zw5-wOjtHHXR0jrUrN2czeas8n6FfR_ZFmB20kZ1IxSoRkhJGPeN4NsK7N6K68eUl-vDvo-HBI2PFt4c7vAFBAACMI8NSALm1juIWsYIymB0xYV5pdtWcmXI8pda1guHmd1n3aTv398TvIzS0-GFlhoFfcQ8JSUEW73Q75jUb4yaWw85pKUBs"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-base font-bold text-slate-900 dark:text-white">Northern Pike</h3>
+<p class="text-xs italic text-slate-500 dark:text-slate-400 font-serif">Esox lucius</p>
+</div>
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-purple-50 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300">
+                                    Predator
+                                </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-red-50 text-red-700 dark:bg-red-900/30 dark:text-red-300">
+                                    Advanced
+                                </span>
+</div>
+</div>
+<div class="mt-3 pt-3 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between">
+<div class="flex items-center text-xs text-slate-500 dark:text-slate-400 gap-1">
+<span class="material-symbols-outlined text-[14px]">public</span>
+<span>12 Zones nearby</span>
+</div>
+<span class="text-primary text-xs font-bold flex items-center gap-0.5 group-hover:translate-x-1 transition-transform">
+                                View Details <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Right: Map View -->
+<section class="flex-1 relative hidden lg:block bg-[#e5e7eb] dark:bg-[#0f150f] overflow-hidden">
+<!-- Map Background (Simulated) -->
+<div class="absolute inset-0 z-0 bg-cover bg-center opacity-80 dark:opacity-60 grayscale-[20%]" data-alt="Detailed topographic map showing lakes, rivers, and green park zones" data-location="Seattle, Washington, USA" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuByo7E_MAMPPRupvFd_o_tpFsVNB3jayEK6CKY057AoD_ifS19EC1AUl5JibzE5MQZ8KMXamOEgVrOEGCX4BzXlTv_B7anfPi-UPJLZ3adSXgW1K4JR6iaFVjtRViVu3OWXGqlyj2mRRCftwNrF5vKFw76drCGvdpZp8eERSjH3z-ufs0fgTrvdGVAXHljwFxE69IXRaBeJXqzpPYn_x1Unz3iYEn62K60xBUYYSrd7QcMjAkLcMDxVHopIgpNEYlLdvP-289-9eYk');">
+</div>
+<!-- Map Controls -->
+<div class="absolute top-6 right-6 flex flex-col gap-2 z-10">
+<div class="bg-white dark:bg-[#1e281e] rounded-lg shadow-lg overflow-hidden border border-slate-200 dark:border-slate-700">
+<button class="flex items-center justify-center w-10 h-10 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-white transition-colors border-b border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="flex items-center justify-center w-10 h-10 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-white transition-colors">
+<span class="material-symbols-outlined">remove</span>
+</button>
+</div>
+<button class="bg-white dark:bg-[#1e281e] rounded-lg shadow-lg w-10 h-10 flex items-center justify-center hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-white transition-colors border border-slate-200 dark:border-slate-700">
+<span class="material-symbols-outlined">near_me</span>
+</button>
+<button class="bg-white dark:bg-[#1e281e] rounded-lg shadow-lg w-10 h-10 flex items-center justify-center hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-white transition-colors border border-slate-200 dark:border-slate-700">
+<span class="material-symbols-outlined">layers</span>
+</button>
+</div>
+<!-- Map Legend/Overlay -->
+<div class="absolute bottom-6 left-6 z-10 bg-white/90 dark:bg-[#1e281e]/90 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 max-w-xs">
+<h4 class="font-bold text-sm text-slate-900 dark:text-white mb-2">Zone Status</h4>
+<div class="space-y-2">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary ring-2 ring-green-200 dark:ring-green-900"></span>
+<span class="text-xs text-slate-600 dark:text-slate-300">Open - Catch &amp; Release</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-amber-500 ring-2 ring-amber-200 dark:ring-amber-900"></span>
+<span class="text-xs text-slate-600 dark:text-slate-300">Seasonal Restrictions</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-slate-400 ring-2 ring-slate-200 dark:ring-slate-700"></span>
+<span class="text-xs text-slate-600 dark:text-slate-300">Closed for Regeneration</span>
+</div>
+</div>
+</div>
+<!-- Map Pins (Simulated positions) -->
+<!-- Pin 1 -->
+<div class="absolute top-[40%] left-[30%] group">
+<div class="relative flex flex-col items-center">
+<!-- Tooltip -->
+<div class="absolute bottom-full mb-2 hidden group-hover:block w-40 bg-white dark:bg-[#1e281e] rounded-lg shadow-xl p-2 text-center transform transition-all border border-slate-200 dark:border-slate-700 z-20">
+<div class="w-full h-20 rounded bg-slate-100 mb-2 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Clear lake surrounded by pine trees" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_Y4KCUnsU7ni2D35sXuami5zpo7x4yt2OYfPlsx8aLASNsHWLQS3vCeGUw2jBzVglPOYOF7HQlLPYCyqJIWcDhc_eEtrgyvRvKJml9o2RPK-YRG1RtGRt_mOmAmP7fIpu2EPXhU2an8jcBdBJ7p-fqmzAcreJqNaMntUU3XYlalN38vQt3D2Xxc_0siTBRtUWNy92x32HclJgBoa8bZhDMuEAYensGKcQpUV8n8Yufq8lGXjrSHnQn4S81Bsj_thvrYMKAI6GxI4"/>
+</div>
+<h5 class="font-bold text-xs text-slate-900 dark:text-white">Silver Lake</h5>
+<p class="text-[10px] text-primary font-medium">5 Species Found</p>
+<div class="absolute left-1/2 -bottom-1 w-2 h-2 bg-white dark:bg-[#1e281e] transform -translate-x-1/2 rotate-45 border-b border-r border-slate-200 dark:border-slate-700"></div>
+</div>
+<!-- Pin Icon -->
+<button class="relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md transition-transform hover:scale-110 ring-4 ring-green-500/30">
+<span class="material-symbols-outlined text-primary text-2xl">location_on</span>
+</button>
+<div class="absolute bottom-0 h-3 w-3 translate-y-1/2 rounded-[100%] bg-black opacity-20 blur-[2px]"></div>
+</div>
+</div>
+<!-- Pin 2 -->
+<div class="absolute top-[60%] left-[60%] group">
+<div class="relative flex flex-col items-center">
+<div class="absolute bottom-full mb-2 hidden group-hover:block w-max px-3 py-1 bg-white dark:bg-[#1e281e] rounded-lg shadow-xl text-center transform transition-all border border-slate-200 dark:border-slate-700 z-20">
+<h5 class="font-bold text-xs text-slate-900 dark:text-white">Pine Creek</h5>
+<div class="absolute left-1/2 -bottom-1 w-2 h-2 bg-white dark:bg-[#1e281e] transform -translate-x-1/2 rotate-45 border-b border-r border-slate-200 dark:border-slate-700"></div>
+</div>
+<button class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-amber-500 text-white shadow-md transition-transform hover:scale-110 ring-4 ring-amber-500/30">
+<span class="material-symbols-outlined text-base">warning</span>
+</button>
+</div>
+</div>
+<!-- Pin 3 -->
+<div class="absolute top-[25%] left-[55%] group">
+<div class="relative flex flex-col items-center">
+<button class="relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white shadow-md transition-transform hover:scale-110 ring-4 ring-green-500/30">
+<span class="material-symbols-outlined text-xl">phishing</span>
+</button>
+<div class="absolute bottom-0 h-3 w-3 translate-y-1/2 rounded-[100%] bg-black opacity-20 blur-[2px]"></div>
+</div>
+</div>
+</section>
+</main>
+</body></html>

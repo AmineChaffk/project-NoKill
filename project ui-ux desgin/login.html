@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login / Register - Catch &amp; Release</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4CAF50",
+                        "primary-dark": "#388E3C",
+                        "accent": "#2196F3",
+                        "accent-hover": "#1976D2",
+                        "background-light": "#F5F5F5",
+                        "background-dark": "#112111",
+                        "text-main": "#111811",
+                        "text-muted": "#638863",
+                        "border-color": "#dce5dc",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main antialiased min-h-screen flex flex-col justify-center">
+<header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-4">
+<a class="flex items-center gap-3 text-text-main dark:text-white" href="#">
+<div class="size-8 text-primary">
+<span class="material-symbols-outlined text-4xl filled">phishing</span>
+</div>
+<h2 class="text-text-main dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Catch &amp; Release</h2>
+</a>
+<a class="text-sm font-medium text-text-muted hover:text-primary transition-colors" href="#">Back to Home</a>
+</header>
+<main class="w-full max-w-6xl mx-auto px-4 lg:px-8 py-20 flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+<div class="hidden lg:flex flex-col gap-6 w-full lg:w-1/2">
+<h1 class="text-5xl font-black text-text-main dark:text-white leading-tight">
+                Join the <span class="text-primary">Sustainable</span> Fishing Community
+            </h1>
+<p class="text-xl text-text-muted leading-relaxed">
+                Connect with anglers who care. Log your catches, share your stories, and protect our waters for future generations.
+            </p>
+<div class="mt-8 grid grid-cols-2 gap-6">
+<div class="flex items-start gap-4">
+<div class="size-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-2xl">menu_book</span>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-1 dark:text-white">Detailed Logs</h3>
+<p class="text-sm text-text-muted">Track species, locations, and weather conditions effortlessly.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="size-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-accent text-2xl">groups</span>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-1 dark:text-white">Expert Advice</h3>
+<p class="text-sm text-text-muted">Learn from the community and share your own tips.</p>
+</div>
+</div>
+</div>
+<div class="mt-8 p-6 bg-white dark:bg-white/5 rounded-xl border border-border-color shadow-sm relative">
+<span class="material-symbols-outlined absolute top-4 left-4 text-4xl text-primary/20">format_quote</span>
+<p class="text-text-main dark:text-gray-200 italic relative z-10 pl-2">
+                    "This platform completely changed how I track my seasons. The community is incredibly supportive of conservation efforts."
+                </p>
+<div class="flex items-center gap-3 mt-4">
+<div class="size-8 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAXVwSvav0bUiHEQS6Werj5yKAuDa8DvUQq87Iq69Xrqh9PNUTjBGrGrg53N4pbAwgmgRAjDdOfWAEs7MzeANBW9AcD8CY7Tt6Lt7plLZ8ZHtKeyb4HtcCCiPZnjXtedZOvfsQgrJTNyQYIwuYHjtVKNlpzXymQW8INZ_Tf2JS52FoBwdNCcgGkTfUWRcApMKm4zzluAxVTu-pZjUX1kHfo6lP6d_gQW5nqKLPPBn6_gy9VM6nSYTJv6PNlFMH-yE3xINtgka0GRBE");'></div>
+<div class="text-sm">
+<span class="font-bold block dark:text-white">Mark D.</span>
+<span class="text-text-muted">Member since 2021</span>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full lg:w-1/2 max-w-md mx-auto">
+<div class="bg-white dark:bg-[#1a2e1a] rounded-2xl shadow-xl border border-border-color overflow-hidden">
+<div class="flex border-b border-border-color">
+<button class="flex-1 py-4 text-center font-bold text-primary border-b-2 border-primary bg-primary/5">Login</button>
+<button class="flex-1 py-4 text-center font-bold text-text-muted hover:text-text-main dark:hover:text-white transition-colors">Register</button>
+</div>
+<div class="p-8">
+<h2 class="text-2xl font-bold text-text-main dark:text-white mb-6">Welcome Back!</h2>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<button class="flex items-center justify-center gap-2 py-2.5 px-4 border border-border-color rounded-lg hover:bg-background-light dark:hover:bg-white/5 transition-colors text-sm font-medium dark:text-white">
+<img alt="Google" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbyJXCA6QsC3bQtZlHSnd01xoP0Uu6SudlnYK4sTjrKK1aZujqTyyYpppjczC6NndbR7k9oQhDzOzKSBxhwDPB0ulZ7zxDEQon-Ps7Dj2U7ykKSTm_-DfUxJHF1Mz2pjhXCBojgXOvVi9hbVp8XH64RklX-Z12coy_LVu051QHtJFU-lS8LXYQMC_eBHOXIJ7F9wEhiNsJw-fbJGTYOtQuAn0kUIv7ag3iEbrVuGYlPJG75olrl-Y1L0QKya2fjvqWnuTRVaLPiiM"/>
+                            Google
+                        </button>
+<button class="flex items-center justify-center gap-2 py-2.5 px-4 border border-border-color rounded-lg hover:bg-background-light dark:hover:bg-white/5 transition-colors text-sm font-medium dark:text-white">
+<img alt="Facebook" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZqB4BQdZeFh1fRo2y17jeW3LM_vp3YTRxW-dSIXEHE3KmKuuIXGozCJNragZdZb1KN8HOP0dWDJNjHfINM35Etou5oGD2Wrf4Howmd7MHSrOoCP7p5d7nOuQtZDzlgBwW0RcR3idtw72Msd2-5ruvrD7S6BEKwKCS07jqbTpO0mo-iMUe3b-Q-e_jezGaulbPsKU_sxNlj9NfnY1KBe4xmAcJQ_RygT8A59sgVfi3hI0aQ6Lbp-IoHbh4cENwxUL2QPIUoiCryX4"/>
+                            Facebook
+                        </button>
+</div>
+<div class="relative mb-6">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-border-color"></div>
+</div>
+<div class="relative flex justify-center text-sm">
+<span class="px-2 bg-white dark:bg-[#1a2e1a] text-text-muted">Or continue with email</span>
+</div>
+</div>
+<form class="space-y-5">
+<div>
+<label class="block text-sm font-medium text-text-main dark:text-gray-300 mb-1.5" for="email">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-text-muted text-[20px]">mail</span>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-lg border-border-color focus:border-primary focus:ring-primary dark:bg-black/20 dark:text-white placeholder:text-gray-400" id="email" placeholder="you@example.com" type="email"/>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<label class="block text-sm font-medium text-text-main dark:text-gray-300" for="password">Password</label>
+<a class="text-xs font-semibold text-accent hover:text-accent-hover" href="#">Forgot Password?</a>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-text-muted text-[20px]">lock</span>
+<input class="w-full pl-10 pr-10 py-2.5 rounded-lg border-border-color focus:border-primary focus:ring-primary dark:bg-black/20 dark:text-white placeholder:text-gray-400" id="password" placeholder="••••••••" type="password"/>
+<button class="absolute right-3 top-2.5 text-text-muted hover:text-text-main" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility_off</span>
+</button>
+</div>
+</div>
+<div class="hidden">
+<label class="block text-sm font-medium text-text-main dark:text-gray-300 mb-1.5" for="confirm-password">Confirm Password</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-text-muted text-[20px]">lock_reset</span>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-lg border-border-color focus:border-primary focus:ring-primary dark:bg-black/20 dark:text-white placeholder:text-gray-400" id="confirm-password" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<div class="flex items-center">
+<input class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded" id="remember-me" type="checkbox"/>
+<label class="ml-2 block text-sm text-text-muted" for="remember-me">
+                                Remember me
+                            </label>
+</div>
+<button class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all transform active:scale-[0.98]" type="submit">
+                            Sign In
+                        </button>
+</form>
+<div class="mt-6 text-center text-sm text-text-muted">
+                        Don't have an account? <a class="font-bold text-primary hover:text-primary-dark" href="#">Register now</a>
+</div>
+</div>
+</div>
+<div class="mt-8 text-center text-xs text-text-muted flex justify-center gap-6">
+<a class="hover:underline" href="#">Privacy Policy</a>
+<a class="hover:underline" href="#">Terms of Service</a>
+<a class="hover:underline" href="#">Help Center</a>
+</div>
+</div>
+</main>
+<div class="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden pointer-events-none">
+<div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-3xl"></div>
+<div class="absolute top-[20%] right-[10%] w-[30%] h-[30%] bg-accent/5 rounded-full blur-3xl"></div>
+<div class="absolute bottom-[10%] left-[20%] w-[20%] h-[20%] bg-green-200/20 dark:bg-green-900/10 rounded-full blur-3xl"></div>
+</div>
+
+</body></html>

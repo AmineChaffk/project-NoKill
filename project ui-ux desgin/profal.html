@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Catch &amp; Release - Member Dashboard</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4cae4f",
+                        "secondary": "#2196F3",
+                        "background-light": "#f6f7f6",
+                        "background-dark": "#151d15",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings:
+            'FILL' 1,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#131613] antialiased">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- Side Navigation -->
+<aside class="hidden md:flex flex-col w-72 bg-white border-r border-[#f1f3f1] h-full sticky top-0 shrink-0 z-20">
+<div class="p-6 flex items-center gap-3">
+<div class="size-8 text-primary flex items-center justify-center rounded-lg bg-primary/10">
+<span class="material-symbols-outlined filled text-2xl">phishing</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-[#131613]">Catch &amp; Release</h1>
+</div>
+<div class="flex flex-col gap-6 px-4 py-2 overflow-y-auto flex-1">
+<!-- User Profile Summary -->
+<div class="p-4 rounded-xl bg-background-light dark:bg-background-dark border border-[#f1f3f1]">
+<div class="flex items-center gap-3 mb-3">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-12 shadow-sm ring-2 ring-white" data-alt="Portrait of a male angler smiling outdoors" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDvVB5HPMrulAb0BgQ89olCitZ0sugag_ma7Y6D01GX5Z_sIlJFHhfKH6QKvXDKBYEH-WlwVkgTG7Sd4hx0hGaaYHAHnvGTNEKC1AtQML5CP1RJc5QoZXCpZWyxJA24a8Zqrbke1rga7Xqh-lztyslUC1x3bYfsTflTghLC-ijOfp-OGs7ic0_ss3dfaW42iZyz2-5O_wqAqf9t8OW03QPJaVBCbR2gmECd_2fWBeJ6gKGLYGQJauXiHUOFiNMGD5cLl7bZ9wPHDq4");'>
+</div>
+<div class="flex flex-col">
+<h2 class="text-base font-bold leading-none">John Doe</h2>
+<span class="text-secondary text-xs font-semibold mt-1">Level 5 Angler</span>
+</div>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-1.5 mb-2">
+<div class="bg-primary h-1.5 rounded-full" style="width: 70%"></div>
+</div>
+<p class="text-xs text-[#6c7f6d]">1,250 XP to Level 6</p>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg bg-primary/10 text-primary group transition-colors" href="#">
+<span class="material-symbols-outlined filled">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-[#6c7f6d] hover:bg-gray-50 hover:text-[#131613] transition-colors" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-medium">My Catches</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-[#6c7f6d] hover:bg-gray-50 hover:text-[#131613] transition-colors" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="font-medium">Map</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-[#6c7f6d] hover:bg-gray-50 hover:text-[#131613] transition-colors" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-medium">Species Log</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-[#6c7f6d] hover:bg-gray-50 hover:text-[#131613] transition-colors" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-medium">Community</span>
+</a>
+</nav>
+<!-- Ecological Tip Widget (Sidebar version) -->
+<div class="mt-auto p-4 rounded-xl bg-blue-50 border border-blue-100">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-xl">water_drop</span>
+<div>
+<p class="text-xs font-bold text-secondary uppercase tracking-wider mb-1">Eco Tip</p>
+<p class="text-xs text-blue-900 leading-relaxed">Wet your hands before handling fish to protect their slime coat.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 border-t border-[#f1f3f1]">
+<button class="flex w-full items-center gap-3 px-3 py-2 rounded-lg text-[#6c7f6d] hover:text-red-600 transition-colors">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-medium text-sm">Sign Out</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-full overflow-hidden relative">
+<!-- Top Header -->
+<header class="h-16 shrink-0 bg-white/80 backdrop-blur-md border-b border-[#f1f3f1] flex items-center justify-between px-6 z-10 sticky top-0">
+<div class="flex md:hidden items-center gap-3">
+<button class="text-[#131613] p-1">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<span class="font-bold text-lg">C&amp;R</span>
+</div>
+<!-- Search -->
+<div class="hidden md:flex max-w-md w-full">
+<label class="relative flex w-full items-center">
+<span class="absolute left-3 text-[#6c7f6d] flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</span>
+<input class="w-full h-10 bg-background-light rounded-lg pl-10 pr-4 text-sm text-[#131613] placeholder-[#6c7f6d] focus:outline-none focus:ring-2 focus:ring-primary/20 transition-shadow border-none" placeholder="Search species, lakes, or anglers..." type="text"/>
+</label>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<button class="relative p-2 text-[#6c7f6d] hover:bg-background-light rounded-lg transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border border-white"></span>
+</button>
+<button class="p-2 text-[#6c7f6d] hover:bg-background-light rounded-lg transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-8 w-px bg-[#f1f3f1] mx-1"></div>
+<button class="flex items-center gap-2">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-9 ring-2 ring-white shadow-sm" data-alt="User profile avatar small" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA1-Y-nyx1PSPQbEvYHOALay54roa4DuGdLyOlgeQIsIurwKH6qyp1QEbNujpF42ihpFgAKt874h0BDsECOO-b2termbmI5p4UdjMRTse6hv4AbwaW1ytB1TORmJh8DVZh03qtPH33nsYpKabPWOsGE-3fFhPXkFk6HXGRPQHkZRiHFaZnWGVNMSCBDqR8jt1VATImfmkFN5BnipyXYeps17ltr2qPI0WxaFP7Qzgda6iEmnuk6pNM1fatpaVerZAXBPCgbYiTBBn8");'>
+</div>
+</button>
+</div>
+</header>
+<!-- Scrollable Dashboard Content -->
+<div class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark p-4 md:p-8">
+<div class="max-w-6xl mx-auto flex flex-col gap-8">
+<!-- Page Heading -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="flex flex-col gap-1">
+<h2 class="text-3xl md:text-4xl font-bold text-[#131613] tracking-tight">Good Morning, John</h2>
+<p class="text-[#6c7f6d] text-base">Conditions are great today. The bass are biting in Lakeview.</p>
+</div>
+<button class="flex items-center justify-center gap-2 bg-primary hover:bg-green-600 text-white font-bold h-12 px-6 rounded-lg shadow-sm hover:shadow-md transition-all active:scale-95">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Log a Catch</span>
+</button>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-white rounded-xl p-5 border border-[#dee3de] shadow-sm flex flex-col gap-1 hover:border-primary/30 transition-colors">
+<div class="flex justify-between items-start">
+<p class="text-[#6c7f6d] text-sm font-medium">Total Catches</p>
+<span class="bg-green-50 text-primary rounded p-1">
+<span class="material-symbols-outlined text-[20px]">phishing</span>
+</span>
+</div>
+<p class="text-[#131613] text-2xl font-bold mt-2">124</p>
+<span class="text-xs text-green-600 font-medium flex items-center mt-1">
+<span class="material-symbols-outlined text-[16px]">trending_up</span> +12 this month
+                            </span>
+</div>
+<div class="bg-white rounded-xl p-5 border border-[#dee3de] shadow-sm flex flex-col gap-1 hover:border-primary/30 transition-colors">
+<div class="flex justify-between items-start">
+<p class="text-[#6c7f6d] text-sm font-medium">Release Rate</p>
+<span class="bg-blue-50 text-secondary rounded p-1">
+<span class="material-symbols-outlined text-[20px]">recycling</span>
+</span>
+</div>
+<p class="text-[#131613] text-2xl font-bold mt-2">97%</p>
+<span class="text-xs text-[#6c7f6d] font-medium mt-1">Top 5% of community</span>
+</div>
+<div class="bg-white rounded-xl p-5 border border-[#dee3de] shadow-sm flex flex-col gap-1 hover:border-primary/30 transition-colors">
+<div class="flex justify-between items-start">
+<p class="text-[#6c7f6d] text-sm font-medium">Favorite Species</p>
+<span class="bg-orange-50 text-orange-500 rounded p-1">
+<span class="material-symbols-outlined text-[20px]">set_meal</span>
+</span>
+</div>
+<p class="text-[#131613] text-2xl font-bold mt-2 truncate">Rainbow Trout</p>
+<span class="text-xs text-[#6c7f6d] font-medium mt-1">42 caught all time</span>
+</div>
+<div class="bg-white rounded-xl p-5 border border-[#dee3de] shadow-sm flex flex-col gap-1 hover:border-primary/30 transition-colors">
+<div class="flex justify-between items-start">
+<p class="text-[#6c7f6d] text-sm font-medium">Hours Fished</p>
+<span class="bg-purple-50 text-purple-500 rounded p-1">
+<span class="material-symbols-outlined text-[20px]">schedule</span>
+</span>
+</div>
+<p class="text-[#131613] text-2xl font-bold mt-2">45h</p>
+<span class="text-xs text-[#6c7f6d] font-medium mt-1">Since last month</span>
+</div>
+</div>
+<!-- Charts & Secondary Content -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Activity Chart -->
+<div class="lg:col-span-2 bg-white rounded-xl border border-[#dee3de] shadow-sm p-6">
+<div class="flex justify-between items-center mb-6">
+<div>
+<h3 class="text-lg font-bold text-[#131613]">Activity Trends</h3>
+<p class="text-sm text-[#6c7f6d]">Catches over last 30 days</p>
+</div>
+<select class="bg-background-light border-none text-sm font-medium rounded-lg text-[#131613] focus:ring-0 cursor-pointer">
+<option>Last 30 Days</option>
+<option>Last 3 Months</option>
+<option>This Year</option>
+</select>
+</div>
+<!-- Chart SVG -->
+<div class="w-full aspect-[2/1] md:aspect-[3/1]">
+<svg class="w-full h-full" fill="none" preserveaspectratio="none" viewbox="0 0 478 150" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="paint0_linear" x1="239" x2="239" y1="0" y2="150">
+<stop stop-color="#4cae4f" stop-opacity="0.2"></stop>
+<stop offset="1" stop-color="#4cae4f" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H0V109Z" fill="url(#paint0_linear)"></path>
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="#4cae4f" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+</div>
+<div class="flex justify-between mt-4 px-2">
+<p class="text-[#6c7f6d] text-xs font-bold uppercase tracking-wider">Week 1</p>
+<p class="text-[#6c7f6d] text-xs font-bold uppercase tracking-wider">Week 2</p>
+<p class="text-[#6c7f6d] text-xs font-bold uppercase tracking-wider">Week 3</p>
+<p class="text-[#6c7f6d] text-xs font-bold uppercase tracking-wider">Week 4</p>
+</div>
+</div>
+<!-- Conservation / Side Widget -->
+<div class="flex flex-col gap-4">
+<!-- Conservation Status -->
+<div class="bg-white rounded-xl border border-[#dee3de] shadow-sm p-6 flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-secondary/10 rounded-lg text-secondary">
+<span class="material-symbols-outlined">water_ec</span>
+</div>
+<h3 class="text-base font-bold">Conservation Goal</h3>
+</div>
+<p class="text-sm text-[#6c7f6d]">Community goal: Release 5,000 Bass this season.</p>
+<div class="w-full bg-gray-100 rounded-full h-2">
+<div class="bg-secondary h-2 rounded-full" style="width: 65%"></div>
+</div>
+<div class="flex justify-between text-xs font-medium">
+<span class="text-[#131613]">3,250 Released</span>
+<span class="text-[#6c7f6d]">65%</span>
+</div>
+</div>
+<!-- Mini Map Widget -->
+<div class="bg-white rounded-xl border border-[#dee3de] shadow-sm overflow-hidden flex-1 min-h-[200px] relative group cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Map view of a local lake with fishing spots marked" data-location="Lake Tahoe" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA0003AdZXU6QYuLdSMqtRzwUdHp6lFdT6LVB2JaF3mPVUJEUn9tjUpTcn6pX1gB5_THjcoBHP9sZGmVersCqLi4Tl3TOBQknLVHPNz66DdoGEgnRzgs5t9itm9YtvO3Kjm25eJG_hpF02BHX-na_WyJb7GVSPfH2e7UaOFsYNGj6EgXU6WQ1u3z8gKhnm606mYj7oLjArdwMyk59NDnDizDwrtMB0IyU2Dys58g_BEIzNvA2XRN3llEdSb9Zz8LN-lOnV0CkKmsac");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4 text-white">
+<h3 class="font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                        Explore Map
+                                    </h3>
+<p class="text-xs opacity-90">3 new hotspots near you</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Catches Section -->
+<div class="flex flex-col gap-4 pb-8">
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-bold text-[#131613]">Recent Community Catches</h3>
+<button class="text-sm font-semibold text-primary hover:text-green-700 flex items-center gap-1">
+                                View All <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Catch Card 1 -->
+<div class="group relative rounded-xl overflow-hidden aspect-[4/3] bg-gray-100 shadow-sm">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Close up of a rainbow trout being held just above water surface" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBQCsDaLCL-4Pm6D3L1OBHvXiVapvPHqJVtKRd4826ho5qyB_h43qtg-h8H4hTeOtNRw-FqqOvCMbbnyIf9IBAyQgF3SzXhJfkHeltuhXpOaqCk1jp40yQOsBZQsvMo82TSNRs90oB6Ofnqhsv7I_bW5fsROvwfRRIYIxYfSVpF4HIyAf3JuHDhq_-0OFGJiJAMfL_ZsOIjbWNSVRcDb_Hk4MqD-0S1Za846iU-LFuJNGnKsI8SdOCYd_GGhd7viDHc7xX63ziP1Jo");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80"></div>
+<div class="absolute top-3 left-3 bg-white/20 backdrop-blur-md px-2 py-1 rounded text-xs font-medium text-white border border-white/20">
+                                    Released
+                                </div>
+<div class="absolute bottom-0 left-0 p-4 w-full">
+<div class="flex items-center gap-2 mb-1">
+<div class="size-6 rounded-full bg-gray-200 bg-cover" data-alt="User avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBAlEMIR7WNBUc__EoqXqwdBEvdwtp-l5JNo2nhn13SnrO6vJhKvUhFGilPU_2uclKh08ZBXyKZCtlomi7lrmqFaY0CT_iJOKXQx5fK4tqGzwozNuQWeS4wJRHODPrmG6isTzAPcssmbT2WXpTucvwJ863wBMwRxjDfzWmh5kSt06OTX-HpFIQxC-Cr5AeoLLksGYOpaudVTqIC5ukzmLk4dHWRBSoPyk1qUBDyaQJBLvJHrxCwXXutInous-lT7pCEMNViAQrj-Q4");'></div>
+<span class="text-white text-xs font-semibold">Alex M.</span>
+</div>
+<h4 class="text-white font-bold text-lg">Rainbow Trout</h4>
+<p class="text-white/80 text-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">location_on</span> 
+                                        Crystal River, CO
+                                    </p>
+</div>
+</div>
+<!-- Catch Card 2 -->
+<div class="group relative rounded-xl overflow-hidden aspect-[4/3] bg-gray-100 shadow-sm">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Scenic view of a bass fish in clear water" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC5AIKtnIbbP2xD1wOqkO7aXCSydn7aztJdcCKZ8k8vLqf-s5pTjl5e9oA5FYuto1TZzav0wDWYV2EYAqQpwaDd1iHUKwuzFpG5iPHwwiekOHQS_MHRhVYSY7R_0xN8pIOCJoblsNcz6JCKajcsfb-6b8KCNTCntDJhqBpiWODys7joMSCwE8AF340PjInUCgaxbK2DJiKtV_F84W6Oj_SMmGib7Ok-nwokLk2xk4yHbEJ2rKouVEYlp5AoUbeZrGu7_KcsYAzxMa4");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80"></div>
+<div class="absolute top-3 left-3 bg-white/20 backdrop-blur-md px-2 py-1 rounded text-xs font-medium text-white border border-white/20">
+                                    Released
+                                </div>
+<div class="absolute bottom-0 left-0 p-4 w-full">
+<div class="flex items-center gap-2 mb-1">
+<div class="size-6 rounded-full bg-gray-200 bg-cover" data-alt="User avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCfgfCgTDY2bl_XKgdrawaAJkG1w4XmYnqRyg_t1YxIVNvH2Nd2QqSY67cgm-Am0QjJ6q5dr8I8sXnK5DBSinYz-_SCRXrtW95iPjLfXA9h0NP0A7XNGVRhmAZmbfpzJT9dZbwjSltP4L8-SyM1l1w8CTAIcGKre3Rp6DEtt0ohr7oXIT9IrHwP0KDN3xuhE2npIMul7GMQ-ZpTvaohE0AwOMWOJDbQrLlLDgxR7fhncF_RmCPAB6ASiwK4eUZahEnZnHJaomv2uTg");'></div>
+<span class="text-white text-xs font-semibold">Sarah K.</span>
+</div>
+<h4 class="text-white font-bold text-lg">Largemouth Bass</h4>
+<p class="text-white/80 text-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">location_on</span> 
+                                        Blue Lake, MN
+                                    </p>
+</div>
+</div>
+<!-- Catch Card 3 -->
+<div class="group relative rounded-xl overflow-hidden aspect-[4/3] bg-gray-100 shadow-sm">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Fly fishing rod and reel resting on a rock by the river" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD0rSOwhjI6nW9xpODajfOe1_cCNuNGocDHJL1zJrKU8CkkL2j6QjtfByRz5e09XCWlxUbkwq5_bluIKwbGj6h6H1b4xqxkbRGnSQxwKaBTRPXnrsU4sgkeHqYSUgZyuw1pqKNCqsx8_HLxnwuXeaav91G0zJWEeQXDxO_3q-0HlksLrO2evG3nEuSpMKVaWWrnMrvt7fGz5iL2eH8hombBuhpzmsBpy6g-lXpImO4BFurZtyk4PNPHBsJwrqmNRgikKayGub1GlKY");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80"></div>
+<div class="absolute top-3 left-3 bg-white/20 backdrop-blur-md px-2 py-1 rounded text-xs font-medium text-white border border-white/20">
+                                    New Spot
+                                </div>
+<div class="absolute bottom-0 left-0 p-4 w-full">
+<div class="flex items-center gap-2 mb-1">
+<div class="size-6 rounded-full bg-gray-200 bg-cover" data-alt="User avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAjBRjF4AZpLkhEV-XKw_kULvavmzQHWeipUUiKkHhF3J8NXDRoG0XAyhXXU8Jgb4HdAjxss-WQj5oM39-xY6qhSPJqzLvvPfoLebVoafBs8Y6tdh2qimRKSntdOZWnU9cGCp1EY6213cHXU9usfOMC28Q_i9NbiBDJc0b5el39ToPseRt6-zZeC5XOWKXrI6Wre0EzNzIevYGkc_QMzwyL1qnecG2ClXRIQtNbKTqDo2EFUHrJ1Ad1l_JoR0fdB0b1HSIojyamGvk");'></div>
+<span class="text-white text-xs font-semibold">Mike T.</span>
+</div>
+<h4 class="text-white font-bold text-lg">Morning Cast</h4>
+<p class="text-white/80 text-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">location_on</span> 
+                                        Snake River, WY
+                                    </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

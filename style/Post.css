@@ -1,0 +1,201 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+:root{
+    --block:#000;
+    --Green:#4CAF50;
+    --blockZero:#00000000;
+    --Light-Gray:#F5F5F5;
+    --blockL: #272727;
+    --color:#ececec;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    background-color: var(--Light-Gray);
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    position: fixed;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+/* header left */
+.titleLink{
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+.logoTitle{
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+}
+.logo{
+    width: 90px;
+}
+.link{
+    display: flex;
+    gap: 30px;
+}
+.link a{
+    text-decoration: none;
+    color: var(--block);
+}
+.link a:hover{
+    color: var(--Green);
+}
+/* header rigth */
+.searshButton{
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.searsh{
+    display: flex;
+    height: 60px;
+    width: 260px;
+    background-color: var(--color);
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 25px;
+}
+.searsh input{
+    background-color: var(--blockZero);
+    width: 70%;
+    height: 100%;
+    border: none;
+    outline: none;
+}
+.icon-2{
+    font-size: 20px;
+    margin-right: 20px;
+    color: var(--Green);
+    padding: 20px;
+    border-radius: 50%;
+    background-color: var(--color);
+}
+
+/* section post */
+/* -----------Maps-------------- */
+.embed-map-fixed{
+    margin-top: 100px;
+    position:fixed;
+    left: 50%;
+    width:50%;
+    height:100vh;
+}
+.embed-map-container{
+    overflow:hidden;
+    background:none!important;
+    width:100%;
+    height:100vh;
+}
+.embed-map-frame{
+    width:100%!important;
+    height:100vh!important;
+}
+/* -------------Maps------------- */
+/* -------------Post------------- */
+
+.sectionPost{
+    display: flex;
+}
+
+.filter{
+    margin: 20px;
+}
+.Post-filter{
+    position: relative;
+    top: 100px;
+    height: 200px;
+    z-index: 2;
+    width: 50%;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+.link-filter{
+    display: flex;
+    gap: 5px;
+}
+.link-f{
+    text-decoration: none;
+    padding: 5px 20px;
+    margin-left: 10px;
+    margin-top: 4px;
+    color: var(--block);
+    border-radius: 20px;
+    border: 1px solid var(--blockL);
+    transition: 0.3s ease;
+}
+
+.link-o{
+    text-decoration: none;
+    padding: 5px 20px;
+    margin-left: 10px;
+    margin-top: 4px;
+    background-color: var(--blockL);
+    color: var(--Light-Gray);
+    border: 1px solid var(--blockL);
+    border-radius: 20px;
+    transition: 0.3s;
+}
+.link-f:hover,.link-o:hover{
+    color: var(--Light-Gray);
+    background-color: var(--blockL);
+}
+
+.link-f:active,.link-o:active{
+    transform: scale(1.1);
+}
+.Posts{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+.post{
+    display: flex;
+    margin: 30px;
+    z-index: 1;
+    padding: 5px;
+    gap: 30px;
+    border-radius: 10px;
+    background-color: var(--Light-Gray);
+    box-shadow: rgba(0, 0, 0, 0.05) 1px 1px 1px 1px;
+}
+.img-posson{
+    border-radius: 12px;
+}
+.Sigin{
+    position: relative;
+    top: 15px;
+    right: 10px;
+}
+.textPost{
+    margin-top: 10px;
+}
+
+
+@media (min-width : 360px) and (max-width:600px) {
+    .sectionPost{
+        display:block;
+        width: 100%;
+    }
+    .embed-map-fixed{
+        display: none;
+    }
+    .Post-filter{
+        width: 100vh;
+    }
+
+}
