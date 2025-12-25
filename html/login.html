@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <section class="flex bg-slate-200">
+        <div class="w-7/12 h-screen max-sm:hidden phone:hidden">
+            <img src="../image/no-kill-capriver-alice.jpg" class="w-full h-screen image">
+        </div>
+        <div class="w-2/4 h-screen flex justify-items-center justify-center items-center mr-auto ml-auto">
+            <div class="flex flex-col gap-3">
+                <h1 class="font-bold text-5xl text-green-600">Welcome Back!</h1>
+                <h3>Email Address</h3>
+                <div class="p-2 border-1">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="text" placeholder="you@gmail.com" class="outline-none pl-3">
+                </div>
+                <h3>password</h3>
+                <div class="p-2 border-1">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="password" class="w-1/2 h-full outline-none pl-3">
+                </div>
+                <a href="#" class="text-green-600">Forgot Password?</a>
+                <div class="flex gap-2">
+                    <input type="checkbox" class="bg-green-600 w-5">
+                    <h3>Remember me</h3>
+                </div>
+                <button class="bg-green-600 h-14 pl-40 pr-40 pb-4 pt-4 rounded-lg text-white font-semibold hover:bg-green-500"><a href="Post.html">Login</a></button>
+                <p class="text-center">Don't have an account? <a href="#" class="text-green-600"> Register now</a></p>
+            </div>       
+        </div>
+    </section>
+</body>
+</html>

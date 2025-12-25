@@ -1,7 +1,5 @@
 Primary Green: #4CAF50
-
 Secondary Blue: #2196F3
-
 Accent Orange: #FF9800
 
 Light Gray (Background): #F5F5F5

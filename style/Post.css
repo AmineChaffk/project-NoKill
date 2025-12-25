@@ -142,15 +142,16 @@
     padding: 5px 20px;
     margin-left: 10px;
     margin-top: 4px;
-    background-color: var(--blockL);
+    background-color: var(--Green);
     color: var(--Light-Gray);
-    border: 1px solid var(--blockL);
+    border: none;
     border-radius: 20px;
     transition: 0.3s;
 }
 .link-f:hover,.link-o:hover{
     color: var(--Light-Gray);
-    background-color: var(--blockL);
+    background-color: var(--Green);
+    border: none;
 }
 
 .link-f:active,.link-o:active{
